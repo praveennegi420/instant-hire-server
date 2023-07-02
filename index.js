@@ -12,13 +12,10 @@ app.use(cors());
 app.use(express.json()); 
 
 app.get('/test',(req, res) => {
-    res.json("test ok");
+    res.json("test ok"); 
 })
 app.use("/api/auth/", authRoutes); 
-app.use("/api/job/", jobRoutes); 
-
-// app.use("")
-
+app.use("/api/job/", jobRoutes);  
 
 
 const port = process.env.PORT || 8080;

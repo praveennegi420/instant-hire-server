@@ -41,6 +41,12 @@ router.post("/applicants/:id", auth,  async (req, res) => {
 	res.status(200).send({ data: newUsers });
 });
 
+router.get('/:id', async(req,res)=>{
+	const id= req.params.id;
+	const job= await Job.findOne({_id:id});
+	res.status(200).send({data: job});
+})
+
 // GET ALL JOBS 
 router.get('/', async(req,res)=>{
 	const jobs= await Job.find({}); 
